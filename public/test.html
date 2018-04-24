@@ -46,7 +46,7 @@
                         <label for="password">Password: </label>
                         <input type="text" id="password" name="password">
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="loginbutton">Submit</button>
                 </form>
             </div>
 
@@ -63,18 +63,18 @@
                     <input type="text" id="lname" name="lname">
                     <br>
                     <label for="email">E-mail: </label>
-                    <input type="text" id="email" name="email">
+                    <input type="text" id="email-input" name="email">
                     <br>
                     <label for="password">Password: </label>
-                    <input type="text" id="password" name="password">
+                    <input type="text" id="password-input" name="password">
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" id="register-submit">Submit</button>
             </form>
 
             <form class="col-md-12 viewPanel" id="addBookmark" style="display: block;">
                 <div class="form-group text-white">
                     <label for="url">
-                        <strong>Add link</strong>
+                        <strong>Add Bookmark</strong>
                     </label>
                     <input type="email" class="form-control" id="url" placeholder="Enter a link here">
                 </div>
@@ -96,83 +96,86 @@
                             aria-expanded="false">
                             <strong></strong>Category</strong>
                         </button>
+
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="true">
+                              Category
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                              <li>
+                                <a class="dropdown-item" id="htmlcss">HTML_CSS</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="jquery">Bootstrap</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="javascript">JavaScript</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="jquery">jQuery</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="ajax">Ajax</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="firebase">Firebase</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="nodejs">Nodejs</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="mysql">MySQL</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="express">Express</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="handlebars">Handlebars</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="sequelize">Sequelize</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="sequelizer">MongoDB</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="react">Reactjs</a>
+                              </li>
+                              <div role="separator" class="dropdown-divider"></div>
+                              <li>
+                                <a class="dropdown-item" id="jquery">Shortcuts</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" id="react">Other</a>
+                              </li>
+                              </li>
+                            </ul>
+                          </div>
+
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" id="htmlcss">html/css</a>
+                            <a class="dropdown-item" id="htmlcss">HTML_CSS</a>
+                            <a class="dropdown-item" id="jquery">Bootstrap</a>
                             <a class="dropdown-item" id="javascript">JavaScript</a>
                             <a class="dropdown-item" id="jquery">jQuery</a>
                             <a class="dropdown-item" id="ajax">Ajax</a>
                             <a class="dropdown-item" id="firebase">Firebase</a>
-                            <a class="dropdown-item" id="nodejs">Node.js</a>
+                            <a class="dropdown-item" id="nodejs">Nodejs</a>
                             <a class="dropdown-item" id="mysql">MySQL</a>
                             <a class="dropdown-item" id="express">Express</a>
                             <a class="dropdown-item" id="handlebars">Handlebars</a>
-                            <a class="dropdown-item" id="sequelizer">Sequelizer</a>
+                            <a class="dropdown-item" id="sequelize">Sequelize</a>
                             <a class="dropdown-item" id="sequelizer">MongoDB</a>
-                            <a class="dropdown-item" id="react">React.js</a>
+                            <a class="dropdown-item" id="react">Reactjs</a>
                             <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" id="jquery">Shortcuts</a>
+                            <a class="dropdown-item" id="react">Other</a>
                         </div>
                     </div>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" id="bookmarksubmit">Submit</button>
             </form>
-
-            <div class="col-md-12 p-3 viewPanel" id="showBookmarks">
-                <h3 class="text-warning">
-                    My Bookmarks</h3>
-                <div class="bg-light text-dark p-3">
-                    <button type="button" class="btn btn-outline-secondary">Remove from My Bookmarks</button>
-                    <div class="row pl-3">
-                        <p>
-                            <span class="bodyHead">Title: </span>
-                            <span class="stayIn" id="titleResult">Sample Title</span>
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p>
-                                <span class="bodyHead">Category: </span>
-                                <span id="catResult">General Class</span>
-                            </p>
-                            <p>
-                                <span class="bodyHead">Date entered: </span>
-                                <span id="dateResult">Jan. 18, 2018 5:33pm</span>
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                <span class="bodyHead">Slack channel: </span>
-                                <span id="slackResult">Hacks & Helps</span>
-                            </p>
-                            <p>
-                                <span class="bodyHead">Entered by: </span>
-                                <span id="byResult">Edwin Hsia</span>
-                            </p>
-                        </div>
-                        <div class="col">
-                            <p>
-                                <span class="bodyHead">Rating </span>
-                                <span id="ratingResult">4</span> stars (
-                                <span id="voteResult">0</span> votes)</p>
-                        </div>
-                    </div>
-                    <div class="row px-3">
-                            <p class="stayIn">
-                                <span class="bodyHead">Description: </span>
-                                <span id="descResult">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-                            </p>
-                            <p class="stayIn">
-                                <span class="bodyHead">Tags/Keywords: </span>
-                                <span id="tagsResult">Lorem ipsum, Dolor sit amet, consectetur, adipiscing elit, rocka bocka boo </span>
-                            </p>
-                            <p class="stayIn">
-                                <span class="bodyHead">URL: </span>
-                                <span id="urlResult">http://www.crankyoldman.com/blog/technology/april1999/a[s0euog </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <form class="col-md-12 viewPanel" id="searchBookmark">
                 <h3 class="text-warning">Search Bookmarks</h3>
@@ -197,31 +200,36 @@
                                 aria-expanded="false">
                                 <strong>Category</strong>
                             </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" id="htmlcss">html/css</a>
+                            <div class="dropdown-menu" id="catselection">
+                                <a class="dropdown-item" id="htmlcss">HTML_CSS</a>
+                                <a class="dropdown-item" id="jquery">Bootstrap</a>
                                 <a class="dropdown-item" id="javascript">JavaScript</a>
                                 <a class="dropdown-item" id="jquery">jQuery</a>
                                 <a class="dropdown-item" id="ajax">Ajax</a>
                                 <a class="dropdown-item" id="firebase">Firebase</a>
-                                <a class="dropdown-item" id="nodejs">Node.js</a>
+                                <a class="dropdown-item" id="nodejs">Nodejs</a>
                                 <a class="dropdown-item" id="mysql">MySQL</a>
                                 <a class="dropdown-item" id="express">Express</a>
                                 <a class="dropdown-item" id="handlebars">Handlebars</a>
-                                <a class="dropdown-item" id="sequelizer">Sequelizer</a>
+                                <a class="dropdown-item" id="sequelize">Sequelize</a>
                                 <a class="dropdown-item" id="sequelizer">MongoDB</a>
-                                <a class="dropdown-item" id="react">React.js</a>
+                                <a class="dropdown-item" id="react">Reactjs</a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="jquery">Shortcuts</a>
+                                <a class="dropdown-item" id="react">Other</a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary dropdown-toggle text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <strong>Slack Channel </strong>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="true">
+                              Slack Channel
+                              <span class="caret"></span>
                             </button>
 
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" id="careers">careers</a>
+                            <div class="dropdown-menu" id="#catselection">
+                                <li><a class="dropdown-item" id="careers">careers</a></li>
                                 <a class="dropdown-item" id="class_activities">class_activities</a>
                                 <a class="dropdown-item" id="classroomnotes">classroomnotes</a>
                                 <a class="dropdown-item" id="group_projects">group_projects</a>
@@ -251,15 +259,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="form-group text-white">
-                        <label for="tags">
-                            <strong>Date Entered</strong>
-                        </label>
-                        <input type="text" class="form-control" id="dateEntered">
-                    </div> -->
+
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" id="search-button">Submit</button>
             </form>
+            <div class="container">
+            </div>
         </div>
     </div>
 

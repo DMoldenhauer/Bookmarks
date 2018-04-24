@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+  $(".dropdown-menu li a").click(function(){
+    $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+    $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+  });
+  
   // Interface Panel Buttons
   $("input:radio[name='group1']").click(function() {
     $('.viewPanel').hide();
@@ -62,7 +67,7 @@ $(document).ready(function () {
   });
 
    //Click handler for login
-   $(document).on("register", "#loginbutton", function (event) {
+   $(document).on("click", "#loginbutton", function (event) {
     var id = $(this).data("id");
     var loginObj = {
       email: $("#email-input").val().trim(),
