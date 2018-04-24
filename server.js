@@ -31,7 +31,7 @@ app.set("view engine", "handlebars");
 var router = require("./controllers/submit-api-routes.js");
 
 app.post("/api/bookmarks", function(req, res){
-  router.createBookmarks(req.body);
+  router.createBookmark(req.body);
 });
 
 require("./controllers/html-routes.js")(app);
