@@ -23,7 +23,7 @@ module.exports = function (app) {
         };
         res.render("index", hbsObject);
       });
-console.log("what is user", User);
+console.log("this is what html.routes.js is sending", User);
 
       // sendFile(path.join(__dirname, "../views/layouts/main.handlebars"));
     });
