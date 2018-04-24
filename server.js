@@ -28,10 +28,10 @@ app.set("view engine", "handlebars");
 // Routes
 // =============================================================
 // require("./routes/search-api-routes.js")(app);
-// require("./controllers/submit-api-routes.js");
-require ("./controllers/submit-api-routes.js");
+var router = require("./controllers/submit-api-routes.js");
+
 app.post("/api/bookmarks", function(req, res){
-  createBookmarks(req.body);
+  router.createBookmarks(req.body);
 });
 
 require("./controllers/html-routes.js")(app);
