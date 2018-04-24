@@ -18,20 +18,18 @@ $(document).ready(function () {
     tagInput = $("#tags").val();
     tagArr = tagInput.split(',');
     var urlObj = {
-      url: $("#url-input").val().trim(),
+      url: $("#url").val().trim(),
       title: $("#title-input").val().trim(),
       summary: $("#summary-input").val().trim(),
       category: catSelect,
-      author: $("#author-input").val().trim(),
       added_by: $("#addedby-input").val().trim(),
       tags: tagArr,
       slack_channel: $("#slackchannel-input").val().trim()
-      // favorite: $("#favorite-checked").val().trim()
     };
     console.log(urlObj);
     // Send the PUT request.
-    $.ajax("/api/bookmarks/" + id, {
-      type: "PUT",
+    $.ajax("/api/bookmarks/", {
+      type: "POST",
       data: urlObj
     }).then(
       function () {
@@ -53,7 +51,7 @@ $(document).ready(function () {
     console.log(userObj);
     // Send the PUT request.
     $.ajax("/api/user/" + id, {
-      type: "PUT",
+      type: "POST",
       data: userObj
     }).then(
       function () {
@@ -73,7 +71,7 @@ $(document).ready(function () {
     console.log(loginObj);
     // Send the PUT request.
     $.ajax("/api/user/" + id, {
-      type: "PUT",
+      type: "GET",
       data: loginObj
     }).then(
       function () {
@@ -96,7 +94,7 @@ $(document).ready(function () {
       enteredby: $("#enteredBy").val().trim()
   };
     console.log(searchObj);
-    $.ajax("/api/bookmarks/" + id, {
+    $.ajax("/api/bookmarks/", {
       type: "GET",
       data: searchObj
     }).then(
