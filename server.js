@@ -28,7 +28,11 @@ app.set("view engine", "handlebars");
 // Routes
 // =============================================================
 // require("./routes/search-api-routes.js")(app);
-// require("./routes/submit-api-routes.js");
+// require("./controllers/submit-api-routes.js");
+app.post("/api/bookmarks", function(req, res){
+  createBookmarks(req.body);
+});
+
 require("./controllers/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
