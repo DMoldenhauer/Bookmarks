@@ -18,7 +18,7 @@ $(document).ready(function () {
     tagInput = $("#tags").val();
     tagArr = tagInput.split(',');
     var urlObj = {
-      url: $("#url-input").val().trim(),
+      url: $("#url").val().trim(),
       title: $("#title-input").val().trim(),
       summary: $("#summary-input").val().trim(),
       category: catSelect,
