@@ -94,7 +94,7 @@ $(document).ready(function () {
       enteredby: $("#enteredBy").val().trim()
   };
     console.log(searchObj);
-    $.ajax("/api/bookmarks/" + id, {
+    $.ajax("/api/bookmarks/", {
       type: "GET",
       data: searchObj
     }).then(
