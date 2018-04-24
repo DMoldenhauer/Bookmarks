@@ -59,6 +59,12 @@
     <form class="col-md-12 viewPanel" id="addBookmark" style="display: block;">
       <div class="form-group text-white">
         <label for="url">
+          <strong>Title</strong>
+        </label>
+        <input type="text" class="form-control" id="title-input" placeholder="Enter a link here">
+      </div>
+      <div class="form-group text-white">
+        <label for="url">
           <strong>Add Bookmark</strong>
         </label>
         <input type="text" class="form-control" id="url" placeholder="Enter a link here">
@@ -68,6 +74,12 @@
           <strong>Description</strong>
         </label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+        <div class="form-group text-white">
+        <label for="tags">
+          <strong>Added by</strong>
+        </label>
+        <input type="text" class="form-control" id="author-input">
       </div>
       <div class="form-group text-white">
         <label for="tags">
@@ -132,6 +144,27 @@
           </li>
         </ul>
       </div>
+        <div class="dropdown" id="slackchannel-input">
+            <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="true">
+              Slack Channel
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" id="#catselection">
+              <li><a class="dropdown-item" id="careers">careers</a></li>
+              <li><a class="dropdown-item" id="class_activities">class_activities</a></li>
+              <li><a class="dropdown-item" id="classroomnotes">classroomnotes</a></li>
+              <li><a class="dropdown-item" id="group_projects">group_projects</a></li>
+              <li><a class="dropdown-item" id="hacks_and_helps">hacks_and_helps</a></li>
+              <li><a class="dropdown-item" id="homework">homework_assignments</a></li>
+              <li><a class="dropdown-item" id="updates">importantclassupdates</a></li>
+              <li><a class="dropdown-item" id="parkinglot">parkinglot</a></li>
+              <li><a class="dropdown-item" id="studygroups">studygroups</a></li>
+              <li><a class="dropdown-item" id="virtualoffice">virtualofficehours</a></li>
+              <div role="separator" class="dropdown-divider"></div>
+              <li><a class="dropdown-item" id="other">Other</a></li>
+            </div>
+          </div>
       <button id="bookmarksubmit">Submit</button>
     </form>
 
@@ -217,7 +250,6 @@
               Slack Channel
               <span class="caret"></span>
             </button>
-
             <div class="dropdown-menu" id="#catselection">
               <li><a class="dropdown-item" id="careers">careers</a></li>
               <li><a class="dropdown-item" id="class_activities">class_activities</a></li>
@@ -238,7 +270,7 @@
             <div class="dropdown">
             <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
-              Raiting
+              Rating
               <span class="caret"></span>
             </button>
             <div class="dropdown-menu">

@@ -14,24 +14,18 @@ $(document).ready(function () {
   $(document).on("click", "#bookmarksubmit", function (event) {
     event.preventDefault();
     var id = $(this).data("id");
-    var urlTitle = $("#url-input");
     var catSelect = $('#catselection :selected').text();
-    // var titleEntry = $.ajax({
-    //   url: "http://textance.herokuapp.com/title/" + urlTitle,
-    //   complete: function (data) {
-    //   }
-    // });
     tagInput = $("#tags").val();
     tagArr = tagInput.split(',');
     var urlObj = {
-      url: $("#url-input").val(),
-      // title: titleEntry.data,
+      url: $("#url-input").val().trim(),
+      title: $("#title-input").val().trim(),
       summary: $("#summary-input").val().trim(),
       category: catSelect,
-      // author: $("#author-input").val().trim(),
-      // added_by: $("#addedby-input").val().trim(),
+      author: $("#author-input").val().trim(),
+      added_by: $("#addedby-input").val().trim(),
       tags: tagArr,
-      // slack_channel: $("#slackchannel-input").val().trim(),
+      slack_channel: $("#slackchannel-input").val().trim()
       // favorite: $("#favorite-checked").val().trim()
     };
     console.log(urlObj);
