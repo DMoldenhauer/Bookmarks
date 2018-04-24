@@ -4,7 +4,7 @@
 var Bookmark = require ("../models/bookmarks.js");
 function createBookmark (field, cb) {
 
-Bookmark.create(field.body)
+Bookmark.create(field)
     .then(function (dbSubmit) {
 
         cb(dbSubmit);
