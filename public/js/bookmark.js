@@ -28,8 +28,8 @@ $(document).ready(function () {
     };
     console.log(urlObj);
     // Send the PUT request.
-    $.ajax("/api/bookmarks/" + id, {
-      type: "PUT",
+    $.ajax("/api/bookmarks/", {
+      type: "POST",
       data: urlObj
     }).then(
       function () {
@@ -51,7 +51,7 @@ $(document).ready(function () {
     console.log(userObj);
     // Send the PUT request.
     $.ajax("/api/user/" + id, {
-      type: "PUT",
+      type: "POST",
       data: userObj
     }).then(
       function () {
@@ -71,7 +71,7 @@ $(document).ready(function () {
     console.log(loginObj);
     // Send the PUT request.
     $.ajax("/api/user/" + id, {
-      type: "PUT",
+      type: "GET",
       data: loginObj
     }).then(
       function () {
