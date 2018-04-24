@@ -1,4 +1,7 @@
-var db = require("../models");
+var db = {  };
+
+db.User = require("../models/users");
+// db.Bookmark = require("../models/bookmarks");
 
 function createUser(userObj, cb) {
     
