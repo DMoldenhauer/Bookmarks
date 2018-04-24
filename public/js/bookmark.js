@@ -22,11 +22,9 @@ $(document).ready(function () {
       title: $("#title-input").val().trim(),
       summary: $("#summary-input").val().trim(),
       category: catSelect,
-      author: $("#author-input").val().trim(),
       added_by: $("#addedby-input").val().trim(),
       tags: tagArr,
       slack_channel: $("#slackchannel-input").val().trim()
-      // favorite: $("#favorite-checked").val().trim()
     };
     console.log(urlObj);
     // Send the PUT request.
