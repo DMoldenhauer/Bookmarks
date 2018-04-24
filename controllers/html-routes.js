@@ -5,6 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var User = require("../models/users.js");
 
 // Routes
 // =============================================================
@@ -14,11 +15,12 @@ module.exports = function (app) {
 
     // index route loads view.html
     app.get("/", function (req, res) {
-      User.all(function (data) {
+      User.findAll({
 
+      }).then(function(data) {
         var hbsObject = {
-          User: data
-        }
+          users: data
+        };
         res.render("index", hbsObject);
       });
 console.log("what is user", User);
