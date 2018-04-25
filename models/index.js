@@ -14,10 +14,10 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection ({
-    host:   "umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    user: "aesa68iji8duv9nb",
-    password: "h4yuxgg3yyht5q2p",
-    database: "h8e6u2btsiw3goux"
+    host:     "umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user:     "hura4fj4dqe072x4",
+    password: "hg8bhez2fmlj5eoj",
+    database: "ufyfu8ke0nm851sb"
   });
 };
 
