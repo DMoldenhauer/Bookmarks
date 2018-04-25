@@ -4,6 +4,7 @@
 // db.Bookmark = require("../models/bookmarks");
 
 var User = require ("../models/users.js");
+
 function createUser(userObj, cb) {
     
     User.create(userObj)

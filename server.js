@@ -37,8 +37,9 @@ app.post("/api/bookmarks", function(req, res){
   });
 });
 
+var router4 = require("./controllers/search-api-routes.js");
 app.get("/api/bookmarks", function(req, res){
-  router.findBookmark(req.body, function(hi){
+  router4.searchBookmark(req.body, function(hi){
    res.json(hi) 
    console.log(hi)
   });

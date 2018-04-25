@@ -1,15 +1,13 @@
-var db = require("../models");
+var bookmarkSearch = require("../models/bookmarks.js");
 
-function searchBookmark(field, value, cb) 
+function searchBookmark(urlObj, cb) 
 {
 
-  db.Bookmark.findOne(field)
-  ({
-
-
-  }).then(function (res) {
-    if (searchBookmark) {
-      cb(field);
+  bookmarkSearch.findAll(urlObj)
+ 
+  .then(function (res) {
+    if (res!=null) {
+      cb(res);
     }
     else
 
@@ -19,7 +17,7 @@ function searchBookmark(field, value, cb)
 
 
 module.exports = {
-  field: field
+  searchBookmark: searchBookmark
 };
 
 

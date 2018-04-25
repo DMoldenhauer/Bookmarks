@@ -12,16 +12,6 @@ Bookmark.create(urlObj)
 });
 
 }
-function findBookmark (searchObj, cb) {
-
-    Bookmark.findOne(searchObj)
-        .then(function (dbfind) {
-    
-            cb(dbfind);
-    
-    });
-    
-    }
 
 
 //Testing
@@ -29,6 +19,6 @@ function findBookmark (searchObj, cb) {
 
 module.exports = {
     createBookmark: createBookmark,
-    findBookmark: findBookmark
+    
 
 };
