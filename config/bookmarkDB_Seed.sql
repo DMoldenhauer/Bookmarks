@@ -1,19 +1,24 @@
+DROP DATABASE bootcamp_bookmarksDB;
 CREATE DATABASE bootcamp_bookmarksDB ;
 USE bootcamp_bookmarksDB;
 
-
+  
 CREATE TABLE bookmarks(
-url varchar (255),
-title varchar (255),
-summary text,
-category varchar (255),
-rating int,
-author varchar (255),
-added_by varchar (255),
-tags varchar (255),
-slack_channel varchar (255),
-submitted timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-favorite boolean
+id INTEGER NOT NULL AUTO_INCREMENT,
+url VARCHAR (255),
+title VARCHAR (255),
+summary TEXT,
+category VARCHAR (255),
+rating INTEGER,
+author VARCHAR (255),
+added_by VARCHAR (255),
+tags VARCHAR (255),
+slack_channel VARCHAR (255),
+
+favorite boolean,
+createdAt DATETIME NOT NULL,
+updatedAt DATETIME NOT NULL,
+PRIMARY KEY(id)
 );
 
 INSERT INTO bookmarks (url, title, author, summary, category, tags, added_by, slack_channel, rating, favorite)

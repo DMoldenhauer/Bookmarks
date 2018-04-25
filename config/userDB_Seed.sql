@@ -1,4 +1,4 @@
-CREATE DATABASE bootcamp_bookmarksDB ;
+
 USE bootcamp_bookmarksDB;
 
  CREATE TABLE users(
@@ -8,6 +8,8 @@ USE bootcamp_bookmarksDB;
  last_name varchar(255) NOT NULL,
  pswd varchar(255) NOT NULL,
  UNIQUE KEY email (email),
+ createdAt DATETIME NOT NULL,
+ updatedAt DATETIME NOT NULL,
 PRIMARY KEY (id)
 );
 

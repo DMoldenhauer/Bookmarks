@@ -37,8 +37,34 @@ app.post("/api/bookmarks", function(req, res){
   });
 });
 
-require("./controllers/html-routes.js")(app);
+app.get("/api/bookmarks", function(req, res){
+  router.findBookmark(req.body, function(hi){
+   res.json(hi) 
+   console.log(hi)
+  });
+});
 
+var router2 = require("./controllers/user-api-routes.js");
+
+app.post("/api/newUser", function(req, res){
+  router2.createUser(req.body, function(hi){
+    res.json(hi)
+    console.log(hi)
+  });
+});
+
+
+var router3 = require("./controllers/user-api-routes.js");
+
+app.get("/api/login", function(req, res){
+  router3.userLogin(req.body, function(hi){
+    res.json(hi)
+    console.log(hi)
+  });
+});
+
+
+require("./controllers/html-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 // db.sequelize.sync({ force: true }).then(function() {

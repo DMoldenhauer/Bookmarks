@@ -2,9 +2,9 @@
 //requiring ../model/index.js
 //index.js looks at all files/models in models/
 var Bookmark = require ("../models/bookmarks.js");
-function createBookmark (field, cb) {
+function createBookmark (urlObj, cb) {
 
-Bookmark.create(field)
+Bookmark.create(urlObj)
     .then(function (dbSubmit) {
 
         cb(dbSubmit);
@@ -12,25 +12,23 @@ Bookmark.create(field)
 });
 
 }
+function findBookmark (searchObj, cb) {
 
+    Bookmark.findOne(searchObj)
+        .then(function (dbfind) {
+    
+            cb(dbfind);
+    
+    });
+    
+    }
 
-// createBookmark(
-//     {url         : "URL", 
-//     title        : "title", 
-//     summary      : "summary text", 
-//     category     : "category", 
-//     rating       : "rating",
-//     author       : "author", 
-//     added_by     : "added by", 
-//     tags         : "tags", 
-//     slack_channel: "slack channel"}, function (field) {
-//     console.log("createBookmark result from submit-api-routes.js is: ", field);
-// });
 
 //Testing
 // console.log("createBookmark result from submit-api-routes.js is: ", field);
 
 module.exports = {
-    createBookmark: createBookmark
+    createBookmark: createBookmark,
+    findBookmark: findBookmark
 
 };
