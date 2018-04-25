@@ -15,15 +15,15 @@ $(document).ready(function () {
     event.preventDefault();
     var id = $(this).data("id");
     var catSelect = $('#catselection :selected').text();
-    tagInput = $("#tags").val();
-    tagArr = tagInput.split(',');
+    // tagInput = $("#tags").val();
+    // tagArr = tagInput.split(',');
     var urlObj = {
       url: $("#url").val().trim(),
       title: $("#title-input").val().trim(),
       summary: $("#summary-input").val().trim(),
       category: catSelect,
       added_by: $("#addedby-input").val().trim(),
-      tags: tagArr,
+      tags: $("#tags").val(),
       slack_channel: $("#slackchannel-input").val().trim()
     };
     console.log(urlObj);
