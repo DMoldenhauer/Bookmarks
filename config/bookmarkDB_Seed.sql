@@ -16,8 +16,8 @@ tags VARCHAR (255),
 slack_channel VARCHAR (255),
 
 favorite boolean,
-createdAt DATETIME NOT NULL,
-updatedAt DATETIME NOT NULL,
+createdAt DATETIME,
+updatedAt DATETIME,
 PRIMARY KEY(id)
 );
 
