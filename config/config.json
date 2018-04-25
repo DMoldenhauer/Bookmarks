@@ -15,10 +15,12 @@
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
+      "username": "rfd7yyxijinevfid",
+      "password": "h7eabmmg75h12pdk",
+      "port": 3306,
+      "database": "lrqmcbz2earltq7k",
+      "host": "umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql",
+      "use_env_variable": "mysql://rfd7yyxijinevfid:h7eabmmg75h12pdk@umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lrqmcbz2earltq7k"
     }
   }
