@@ -7,6 +7,19 @@ var basename  = path.basename(__filename);
 var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var db        = {};
+var mysql     = require("mysql");
+var connection
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection ({
+    host:   "umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user: "aesa68iji8duv9nb",
+    password: "h4yuxgg3yyht5q2p",
+    database: "h8e6u2btsiw3goux"
+  });
+};
 
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
