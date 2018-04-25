@@ -87,9 +87,10 @@ $(document).ready(function () {
     var catSelect = $('#catselection :selected').text();
     console.log(catSelect);
     var searchObj = {
-      title: $("#title-input").val().trim(),
+      title: $("#titlesearch").val().trim(),
       category: catSelect,
       added_by: $("#enteredBy").val().trim(),
+      author: $("#authorsearch").val().trim(),
       tags: $("#tags").val().trim(),
       enteredby: $("#enteredBy").val().trim()
   };
@@ -99,7 +100,8 @@ $(document).ready(function () {
       data: searchObj
     }).then(
       function () {
-        location.reload();
+        // location.reload();
+        console.log("successful search!");
       }
     );
   });
