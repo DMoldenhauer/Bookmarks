@@ -3,15 +3,28 @@ var Sequelize = require("sequelize");
 // // sequelize (lowercase) references my connection to 
 // var sequelize = require("../config/config.json"); 
 
-
+if (process.env.JAWSDB_URL) {
+var connection = new Sequelize({
+  username: "hura4fj4dqe072x4",
+  password: "hg8bhez2fmlj5eoj",
+  database: "ufyfu8ke0nm851sb",
+  port: 3306,
+  host: "umabrisfx8afs3ja.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+  dialect: "mysql"
+})
+} else {
 var connection = new Sequelize({
   username: "root",
   password: "root",
   database: "bootcamp_bookmarksDB",
   port: 8889,
-  host: "127.0.0.1",
+  host: "localhost",
   dialect: "mysql"
 })
+}
+
+
+
 
 console.log ("I am connected in the bookmark file")
 
