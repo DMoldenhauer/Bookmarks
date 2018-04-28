@@ -86,7 +86,7 @@
       </div>
 
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white my-1" type="button" data-toggle="dropdown"
+        <button id ="categorybtn" class="btn btn-default dropdown-toggle btn-outline-secondary text-white my-1" type="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="true">
           Category
           <span class="caret"></span>
@@ -142,7 +142,7 @@
         </ul>
       </div>
       <div class="dropdown" id="slackchannel-input">
-        <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white my-1" type="button" data-toggle="dropdown"
+        <button id = "slackbtn" class="btn btn-default dropdown-toggle btn-outline-secondary text-white my-1" type="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="true">
           Slack Channel
           <span class="caret"></span>
@@ -351,15 +351,15 @@
       </div>
     </form>
 
-    <div class="col-md-12 p-3 viewPanel" id="showBookmarks">
+    {{!-- <div class="col-md-12 p-3 viewPanel" id="showBookmarks">
       <img src="bookmarkResult.jpg" alt="Dummy" width="100%" />
 
-    </div>
+    </div> --}}
 
-    {{!--
+    
     <div class="container">
       {{>bookmark-block}}
-    </div> --}}
+    </div>
 
   </div>
 </div>

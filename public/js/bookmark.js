@@ -12,23 +12,24 @@ $(document).ready(function () {
 
   // Click handler for submitting a bookmark
   $(document).on("click", "#bookmarksubmit", function (event) {
+    console.log("submitting...")
     event.preventDefault();
     var id = $(this).data("id");
-    var catSelect = $('#catselection :selected').text();
+   
     // tagInput = $("#tags").val();
     // tagArr = tagInput.split(',');
     var urlObj = {
       url: $("#url").val().trim(),
       title: $("#title-input").val().trim(),
       summary: $("#summary-input").val().trim(),
-      category: catSelect,
+      category: $("#categorybtn").text().trim(),
       added_by: $("#addedby-input").val().trim(),
       tags: $("#tags").val(),
-      slack_channel: $("#slackchannel-input").val().trim()
+      slack_channel: $("#slackbtn").text().trim()
     };
     console.log(urlObj);
     // Send the PUT request.
-    $.ajax("/api/bookmarks/", {
+    $.ajax("/api/bookmarks/" , {
       type: "POST",
       data: urlObj
     }).then(
