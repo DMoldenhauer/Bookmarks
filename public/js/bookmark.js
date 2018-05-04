@@ -86,22 +86,22 @@ $(document).ready(function () {
     event.preventdefault();
     var id = $(this).data("id");
     var catSelect = $('#catselection :selected').text();
-    console.log(catSelect);
+    console.log("catselect is:  " , catSelect);
     var searchObj = {
       title: $("#titlesearch").val().trim(),
       category: catSelect,
       added_by: $("#enteredBy").val().trim(),
       author: $("#authorsearch").val().trim(),
       tags: $("#tags").val().trim(),
-      enteredby: $("#enteredBy").val().trim()
+      // enteredby: $("#enteredBy").val().trim()
   };
     console.log(searchObj);
-    $.ajax("/api/bookmarks/", {
+    $.ajax("/api/bookmarks", {
       type: "GET",
       data: searchObj
     }).then(
-      function () {
-        // location.reload();
+      function (serverResponse) {
+        serverResponse.send();
         console.log("successful search!");
       }
     );

@@ -39,6 +39,7 @@ app.post("/api/bookmarks", function(req, res){
 
 var router4 = require("./controllers/search-api-routes.js");
 app.get("/api/bookmarks", function(req, res){
+  console.log ("req.body from /api/bookmarks is: " + req.body);
   router4.searchBookmark(req.body, function(hi){
    res.json(hi) 
    console.log(hi)
