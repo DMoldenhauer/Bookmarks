@@ -83,16 +83,18 @@ $(document).ready(function () {
 
   //Click handler for search function
   $(document).on("click", "#search-button", function (event) {
-    event.preventdefault();
+    event.preventDefault();
     var id = $(this).data("id");
-    var catSelect = $('#catselection :selected').text();
-    console.log("catselect is:  " , catSelect);
-    var searchObj = {
-      title: $("#titlesearch").val().trim(),
-      category: catSelect,
-      added_by: $("#enteredBy").val().trim(),
-      author: $("#authorsearch").val().trim(),
-      tags: $("#tags").val().trim(),
+    // var catSelect = $('#catselection :selected').text();
+    // console.log("catselect is:  " , catSelect);
+    var searchObj = {   //commented title, addedby, etc due to changing search to just the category
+      // title: $("#titlesearch").val().trim(),
+      // slack_channel: $("#slackbtn").text().trim()
+      
+      category: $("#catSelect").text().trim(),
+      // added_by: $("#enteredBy").val().trim(),
+      // author: $("#authorsearch").val().trim(),
+      // tags: $("#tags").val().trim(),
       // enteredby: $("#enteredBy").val().trim()
   };
     console.log(searchObj);
@@ -100,9 +102,32 @@ $(document).ready(function () {
       type: "GET",
       data: searchObj
     }).then(
-      function (serverResponse) {
-        serverResponse.send();
-        console.log("successful search!");
+      function (bookmarks) {
+        $("#bookmarks").empty();
+        console.log('bookmarks', bookmarks);
+        for (var i = 0; i < bookmarks.length; i++) {
+          var bookmark = bookmarks[i];
+          $("#bookmarks").append(`
+            <div class="row">
+              <div class="col-md-12">
+                <p>
+
+
+                  <strong>Title:</strong>
+                  ${bookmark.title}
+                  <strong>Description:</strong>
+                  ${bookmark.summary}
+                  <strong>URL:</strong>
+                  ${bookmark.url}
+
+
+
+                </p>
+              </div>
+            </div>
+          `);
+        }
+        
       }
     );
   });

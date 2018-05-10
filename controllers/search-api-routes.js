@@ -1,17 +1,35 @@
 var bookmarkSearch = require("../models/bookmarks.js");
 
-function searchBookmark(urlObj, cb) 
-{
+function searchBookmark(urlObj, cb) {
 
-  bookmarkSearch.findAll(urlObj)
- 
-  .then(function (res) {
-    if (res!=null) {
-      cb(res);
+
+//search for specific attributes - hash usage
+// bookmarkSearch.findAll ({ where: { 
+//      category:"   " 
+//  } })
+//      .then(projects => {
+//  projects will be an array of Project instances with the specified name
+// })
+
+  console.log('urlObj', urlObj);
+  //console.log('urlObj', JSON.stringify(urlObj));
+
+  /*Post.findAll({
+    where: {
+      authorId: 2
     }
-    else
+  });*/
 
-      cb(false);
+  //bookmarkSearch.findAll(urlObj)
+  bookmarkSearch.findAll({
+    where: urlObj // { category: "MongoDB" }
+  })
+    .then(function (res) {
+      if (res!=null) {
+        cb(res);
+      }
+    else
+        cb(false);
   });
 };
 

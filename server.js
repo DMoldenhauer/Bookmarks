@@ -37,17 +37,8 @@ app.post("/api/bookmarks", function(req, res){
   });
 });
 
-var router4 = require("./controllers/search-api-routes.js");
-app.get("/api/bookmarks", function(req, res){
-  console.log ("req.body from /api/bookmarks is: " + req.body);
-  router4.searchBookmark(req.body, function(hi){
-   res.json(hi) 
-   console.log(hi)
-  });
-});
 
 var router2 = require("./controllers/user-api-routes.js");
-
 app.post("/api/newUser", function(req, res){
   router2.createUser(req.body, function(hi){
     res.json(hi)
@@ -57,7 +48,6 @@ app.post("/api/newUser", function(req, res){
 
 
 var router3 = require("./controllers/user-api-routes.js");
-
 app.get("/api/login", function(req, res){
   router3.userLogin(req.body, function(hi){
     res.json(hi)
@@ -66,11 +56,25 @@ app.get("/api/login", function(req, res){
 });
 
 
+var router4 = require("./controllers/search-api-routes.js");
+app.get("/api/bookmarks", function(req, res) {
+  // console.log ("req.body from /api/bookmarks is: " + req.body);
+  console.log ("req.query from /api/bookmarks is: " + JSON.stringify(req.query));
+  var category = req.query.category;
+  console.log('req.body', req.body);
+  router4.searchBookmark(req.query, function(hi){
+   res.json(hi) 
+   //console.log(hi)
+  });
+});
+
+
+
+
 require("./controllers/html-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 // db.sequelize.sync({ force: true }).then(function() {
-
 // });
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);

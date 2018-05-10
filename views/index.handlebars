@@ -4,9 +4,9 @@
       <h1 class="text-warning">
         <strong>Bootcamp Bookmarks</strong>
       </h1>
-      <h3 class="text-light">
+      <h4 class="text-light">
         Saving and organizing class links since 2018
-      </h3>
+      </h4>
       <div class="my-4 pale">
         <input type="radio" name='group1' value="userLogin">&nbsp;User Login &nbsp;
         <input type="radio" name='group1' value="createUser">&nbsp;New User &nbsp;
@@ -58,13 +58,13 @@
         <label for="url">
           Title
         </label>
-        <input type="text" class="form-control" id="title-input" placeholder="Enter a link here">
+        <input type="text" class="form-control" id="title-input" placeholder="Title of article">
       </div>
       <div class="form-group pale">
         <label for="url">
           Add Bookmark
         </label>
-        <input type="text" class="form-control" id="url" placeholder="Enter a link here">
+        <input type="text" class="form-control" id="url" placeholder="URL here">
       </div>
       <div class="form-group pale">
         <label for="exampleFormControlTextarea1">
@@ -78,12 +78,12 @@
         </label>
         <input type="text" class="form-control" id="addedby-input">
       </div>
-      <div class="form-group pale">
+      {{!-- <div class="form-group pale">
         <label for="tags">
           Tags
         </label>
         <input type="text" class="form-control" id="tags">
-      </div>
+      </div> --}}
 
       <div class="dropdown">
         <button id ="categorybtn" class="btn btn-default dropdown-toggle btn-outline-secondary text-white my-1" type="button" data-toggle="dropdown"
@@ -189,7 +189,7 @@
 
     <form class="col-md-12 viewPanel rounded p-3" id="searchBookmark">
       <h3 class="text-warning">Search Bookmarks</h3>
-      <div class="row">
+      {{!-- <div class="row">
         <div class="form-group pale col-md-6">
           <label for="tags">
             Title
@@ -214,11 +214,11 @@
           </label>
           <input type="text" class="form-control" id="tags">
         </div>
-      </div>
+      </div> --}}
       <div class="row">
         <div class="col-md-3">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
+            <button id="catSelect" class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
               Category
               <span class="caret"></span>
@@ -274,7 +274,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-3">
+        {{!-- <div class="col-md-3">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
@@ -318,8 +318,8 @@
               </li>
             </div>
           </div>
-        </div>
-        <div class="col-md-3">
+        </div> --}}
+        {{!-- <div class="col-md-3">
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle btn-outline-secondary text-white" type="button" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="true">
@@ -344,7 +344,7 @@
               </li>
             </div>
           </div>
-        </div>
+        </div> --}}
         <div class="col-md-3">
           <button class="btn btn-light float-right" type="submit" id="search-button">Submit</button>
         </div>
@@ -358,6 +358,7 @@
 
     
     <div class="container">
+      <div id="bookmarks"></div>
       {{>bookmark-block}}
     </div>
 
